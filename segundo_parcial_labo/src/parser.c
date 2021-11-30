@@ -90,17 +90,7 @@ int parser_ListaFiltradaForText(FILE* pFile, LinkedList* listaFiltrada, LinkedLi
 
 	return retorno;
 }
-/*int parser_ListaMapeadaforText(FILE* pFile, LinkedList* listaMapeada){
-	int retorno;
-	retorno=-1;
-	if(pFile!=NULL && listaMapeada!=NULL){
-		for(int i=0; i<ll_len(listaMapeada); i++){
-			fprintf(pFile, "%d, %s, %s, %f", )
-		}
-	}
 
-	return retorno;
-}*/
 
 int parser_ListaMapeadaforText(FILE* pFile, LinkedList* listaMapeada, LinkedList* listaEditoriales){
 
