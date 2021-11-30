@@ -15,6 +15,7 @@
 #include "LinkedList.h"
 #include "controller.h"
 #include "input.h"
+#include "nexo.h"
 #define ARCHIVOSINCARGAR "Para realizar esta opcion debe cargar el archivo de libros y el archivo editoriales en el sistema\n"
 
 /*1. Leer un archivo con los datos de libros, guardándolos en un linkedList de entidades eLibro. ACLARACIÓN: El nombre del archivo se debe pasar como parámetro por línea de comandos.
@@ -148,7 +149,7 @@ int main(void) {
 				printf("Operacion realizada exitosamente\n");
 				listaFiltrada= controller_FiltrarLista(listaLibros, listaFiltrada);
 				ListLibros(listaFiltrada, listaEditoriales);
-				printf("Guardando lista en archivo...");
+				printf("Guardando lista en archivo...\n");
 				VerificarTresRetornos(controller_CargarListaFiltradaEnCsv(listaFiltrada, listaEditoriales), "GUARDADO", "ERROR LEVE", "ERROR");
 
 
