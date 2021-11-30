@@ -209,6 +209,8 @@ int asignarDescuento(void* element){
 	pLibro= (Libro*) element;
 	retorno=-1;
 
+
+
 	if(pLibro->idEditorial==1 && pLibro->precio>=5000){
 
 		pLibro->precio= (pLibro->precio) - ((20*pLibro->precio)/100);
