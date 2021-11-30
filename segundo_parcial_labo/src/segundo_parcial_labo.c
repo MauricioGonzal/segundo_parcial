@@ -15,6 +15,7 @@
 #include "LinkedList.h"
 #include "controller.h"
 #include "input.h"
+#define ARCHIVOSINCARGAR "Para realizar esta opcion debe cargar el archivo de libros y el archivo editoriales en el sistema\n"
 
 /*1. Leer un archivo con los datos de libros, guardándolos en un linkedList de entidades eLibro. ACLARACIÓN: El nombre del archivo se debe pasar como parámetro por línea de comandos.
 2. Leer un archivo con los datos de editoriales, guardándolos en un linkedList de entidades eEditorial. ACLARACIÓN: El nombre del archivo se debe pasar como parámetro por línea de comandos.
@@ -63,10 +64,16 @@ int main(void) {
 	setbuf(stdout, NULL);
 	int opcion;
 	int opcionSalida;
+	int banderaLibros;
+	int banderaEditoriales;
+	banderaEditoriales=1;
+	banderaLibros=1;
+
 	opcionSalida=0;
 
 	LinkedList* listaLibros= ll_newLinkedList();
 	LinkedList* listaEditoriales= ll_newLinkedList();
+	LinkedList* listaFiltrada;
 
 	if(listaLibros!=NULL && listaEditoriales!=NULL){
 	do{
@@ -76,29 +83,69 @@ int main(void) {
 		}
 		switch(opcion){
 		case 1:
+			if(banderaLibros==1){
+
 			if(controller_LoadLibros(listaLibros, "libros.csv")==0){
 				printf("\nel archivo se ha cargado correctamente\n");
+				banderaLibros=0;
+			}
+			else{
+				printf("el archivo ya se encuentra cargado\n");
+			}
 			}
 			break;
 		case 2:
+			if(banderaEditoriales==1){
 			if(controller_LoadEditoriales(listaEditoriales, "editoriales.csv")==0){
 				printf("\nEl archivo se ha cargado correctamente\n");
+				banderaEditoriales=0;
+			}
+			}
+			else{
+				printf("el archivo ya se encuentra cargado\n");
 			}
 			break;
+
 		case 3:
+			if(banderaLibros==0 && banderaEditoriales==0){
 			if(controller_sortLibros(listaLibros)==0){
 				printf("\nLa lista ha sido ordenada exitosamente\n");
 			}
-			printf("ID, TITULO, AUTOR, PRECIO, EDITORIAL");
+			}
+			else{
+				printf(ARCHIVOSINCARGAR);
+			}
+
 
 			break;
 		case 4:
+			if(banderaLibros==0 && banderaEditoriales==0){
+			printf("ID, TITULO, AUTOR, PRECIO, EDITORIAL");
 			if(controller_ListLibros(listaLibros, listaEditoriales)==0){
 				printf("Operacion realizada exitosamente");
 			}
+			}
+			else{
+				printf(ARCHIVOSINCARGAR);
+			}
 			break;
 		case 5:
-			controller_FiltrarLista(listaLibros);
+			if(banderaLibros==0 && banderaEditoriales==0){
+			if(controller_FiltrarLista(listaLibros, listaFiltrada)!=NULL){
+				printf("Operacion realizada exitosamente\n");
+				listaFiltrada= controller_FiltrarLista(listaLibros, listaFiltrada);
+				ListLibros(listaFiltrada, listaEditoriales);
+				printf("Guardando lista en archivo...");
+				VerificarTresRetornos(controller_CargarListaFiltradaEnCsv(listaFiltrada, listaEditoriales), "GUARDADO", "ERROR LEVE", "ERROR");
+
+
+			}
+			}
+			else{
+				printf(ARCHIVOSINCARGAR);
+			}
+
+
 			break;
 		case 6:
 			opcionSalida= SalirDelPrograma();

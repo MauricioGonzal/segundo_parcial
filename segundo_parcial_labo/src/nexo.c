@@ -36,7 +36,7 @@ void listOneLibro(Libro* this, LinkedList* editoriales){
 	Libro_getPrecio(this, &precio);
 	Libro_getIdEditorial(this, &idEditorial);
 
-	printf("%d, %s, %s, %.2f", id, titulo, autor, precio);
+	printf("%d, %s, %s, %.2f, ", id, titulo, autor, precio);
 	for(int i=0; i<ll_len(editoriales); i++){
 		editorial= ll_get(editoriales, i);
 		Editorial_getId(editorial, &idEditAux);
@@ -48,4 +48,32 @@ void listOneLibro(Libro* this, LinkedList* editoriales){
 
 
 
+}
+
+
+ int cargarListaFiltrada(FILE* pFile, LinkedList* listaFiltrada, LinkedList* listaEditoriales){
+
+	int retorno;
+	retorno=-1;
+	Libro* pLibro;
+	Editorial* pEditorial;
+
+	fprintf(pFile, "ID, TITULO, AUTOR, PRECIO, EDITORIAL\n");
+
+	for(int i=0; i<ll_len(listaFiltrada); i++){
+		pLibro= (Libro*)ll_get(listaFiltrada, i);
+		for(int j=0; j<ll_len(listaEditoriales); j++){
+			pEditorial= (Editorial*)ll_get(listaEditoriales, j);
+			if(pEditorial->id== pLibro->idEditorial){
+				break;
+			}
+		}
+		if(pLibro!=NULL){
+		fprintf(pFile, "%d, %s, %s, %f, %s\n", pLibro->id, pLibro->titulo, pLibro->autor, pLibro->precio, pEditorial->editorial);
+		retorno=0;
+		}
+	}
+
+
+	return retorno;
 }

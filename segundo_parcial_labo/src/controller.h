@@ -26,6 +26,8 @@ int controller_sortLibros(LinkedList* listaLibros);
 
 int controller_ListLibros(LinkedList* listaLibros, LinkedList* listaEditoriales);
 
-int controller_FiltrarLista(LinkedList* listaLibros);
+LinkedList* controller_FiltrarLista(LinkedList* listaLibros, LinkedList* listaFiltrada);
+
+int controller_CargarListaFiltradaEnCsv(LinkedList* listaFiltrada, LinkedList* listaEditoriales);
 
 #endif /* CONTROLLER_H_ */

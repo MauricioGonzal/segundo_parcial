@@ -11,6 +11,7 @@
 #include "LinkedList.h"
 
 
+
 static Node* getNode(LinkedList* this, int nodeIndex);
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
 
@@ -532,12 +533,11 @@ if(fn!=NULL && this!=NULL && listaFiltrada!=NULL){
 	for(int i=0; i<ll_len(this); i++){
 		if(fn(ll_get(this, i))==1){
 			ll_add(listaFiltrada, ll_get(this, i));
+
 		}
 	}
 
 }
-
-
 	return listaFiltrada;
 }
 

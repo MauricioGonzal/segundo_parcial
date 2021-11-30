@@ -77,13 +77,34 @@ int controller_ListLibros(LinkedList* listaLibros, LinkedList* listaEditoriales)
 	return retorno;
 }
 
-int controller_FiltrarLista(LinkedList* listaLibros){
-	int retorno;
-	retorno=-1;
+LinkedList* controller_FiltrarLista(LinkedList* listaLibros, LinkedList* listaFiltrada){
 
-	if(ll_filter(listaLibros, buscarMinotauro)==0){
-		retorno=0;
+
+	if(ll_filter(listaLibros, buscarMinotauro)!=NULL){
+		listaFiltrada= ll_filter(listaLibros, buscarMinotauro);
 	}
 
-	return retorno;
+	return listaFiltrada;
 }
+
+int controller_CargarListaFiltradaEnCsv(LinkedList* listaFiltrada, LinkedList* listaEditoriales){
+	int retorno;
+	FILE* pFile;
+	pFile= fopen("listaFiltrada.csv", "w");
+
+	retorno=-1;
+	if(pFile!=NULL && listaFiltrada!=NULL && listaEditoriales!=NULL){
+		retorno=1;
+		if(cargarListaFiltrada(pFile, listaFiltrada, listaEditoriales)==0){
+			retorno=0;
+		}
+
+
+	}
+
+	fclose(pFile);
+	return retorno;
+
+}
+
+
