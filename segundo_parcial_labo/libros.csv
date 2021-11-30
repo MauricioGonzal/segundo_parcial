@@ -1,0 +1,101 @@
+id,titulo,autor,precio,idEditorial
+1,Libellula quadrimaculata,Filmore Card,6413.99,2
+2,Erethizon dorsatum,Emelyne Finicj,7510.4,1
+3,unavailable,Ardene Trodd,8411.04,3
+4,Alopochen aegyptiacus,Pietra MacAllaster,1164.71,5
+5,Cereopsis novaehollandiae,Pattie Jakolevitch,8967.57,4
+6,Spizaetus coronatus,Harriott Samuels,9972.3,2
+7,Paradoxurus hermaphroditus,Demeter Laffranconi,4986.87,5
+8,Vanellus armatus,Goldie Postle,3584.53,1
+9,Aonyx capensis,Gisele Feitosa,5327.03,3
+10,Varanus salvator,Sandra Dauby,5851.39,1
+11,Ursus maritimus,Brigg Martt,1125.83,3
+12,Pseudalopex gymnocercus,Redford Gegg,8613.87,1
+13,Tragelaphus scriptus,Gonzalo Karleman,2403.01,4
+14,Macropus fuliginosus,Jessy Storrie,4020.76,5
+15,Gymnorhina tibicen,Liv Mortimer,5411.23,5
+16,Chloephaga melanoptera,Preston Heatlie,5189.09,2
+17,Cacatua tenuirostris,Casper Twentyman,9745.39,3
+18,Spermophilus lateralis,Em Bignal,8059.28,4
+19,Corvus albus,Cornie Ing,6335.98,1
+20,Uraeginthus bengalus,Kristos Marjanski,9898.2,6
+21,Macropus parryi,Terrell Castelijn,2054.03,1
+22,Rhea americana,Cyndia Bakewell,9467.19,2
+23,Fulica cristata,Rochella Penhaligon,7416.96,3
+24,Geochelone elephantopus,Amalee Shory,593.54,2
+25,Tockus erythrorhyncus,Beverlie Minett,4363.65,6
+26,Amblyrhynchus cristatus,Doug Pourveer,9239.2,2
+27,Eremophila alpestris,Egbert Benedit,2949.76,1
+28,Tayassu pecari,Ilyssa Oloman,1643.3,6
+29,Balearica pavonina,Sheena Dufour,8791.89,5
+30,Pseudoleistes virescens,Hardy Latour,9937.17,3
+31,unavailable,Hilliard Crocker,8601.26,4
+32,Bubulcus ibis,Heriberto Trorey,7948.87,4
+33,Eumetopias jubatus,Gerik Lowin,5392.75,6
+34,Bucephala clangula,Harvey Kynan,4499.35,5
+35,Tadorna tadorna,Morty Gritsunov,5796.13,2
+36,Actophilornis africanus,Bengt Broun,3761.84,5
+37,Canis aureus,Shannon Dadge,1896.11,1
+38,Uraeginthus angolensis,Susanetta Roy,5421.18,5
+39,Bos frontalis,Dalli Dancy,1137.09,3
+40,Epicrates cenchria maurus,Giffie Niccolls,9480.27,6
+41,Ateles paniscus,Benji Leet,2045.3,1
+42,Ploceus rubiginosus,Bobette Harrod,4803.75,6
+43,Didelphis virginiana,Any Gouldie,4474.67,6
+44,Felis concolor,Vivian Varsey,2248.59,5
+45,Colobus guerza,Francene Gerrels,6103.58,1
+46,Ardea golieth,Carmita Jekyll,8434.23,3
+47,Butorides striatus,Wilek Plumbridge,6921.18,3
+48,Sceloporus magister,Cody Cummins,6358.63,2
+49,Crotalus triseriatus,Mirabelle Hadcock,7499.01,4
+50,Ephippiorhynchus mycteria,Fielding Doble,4362.68,4
+51,Columba palumbus,Yelena Brenstuhl,2910.08,2
+52,Casmerodius albus,Nonna Trematick,6353.95,2
+53,Paroaria gularis,Ginni Costall,7105.4,4
+54,Gyps bengalensis,Chastity Rheaume,7352.73,2
+55,Phasianus colchicus,Ermentrude Gerraty,4640.97,6
+56,Ephippiorhynchus mycteria,Lauri Niccols,3421.4,6
+57,Bassariscus astutus,Fields Dryden,534.21,2
+58,Microcebus murinus,Gianna Ladd,3512.74,5
+59,Caiman crocodilus,Berny Eby,7945.96,2
+60,Microcebus murinus,Corabella De Michele,885.07,2
+61,Cynictis penicillata,Angelina Skellern,9946.86,3
+62,Eumetopias jubatus,Reina Gindghill,7130.43,4
+63,Pelecans onocratalus,Andrew Happs,8618.71,6
+64,Madoqua kirkii,Farleigh Motte,2854.81,1
+65,Eurocephalus anguitimens,Kristal Goley,2613.25,4
+66,Camelus dromedarius,Levi Gillespey,2845.89,2
+67,Ephippiorhynchus mycteria,Daniel Branson,4918.34,5
+68,Estrilda erythronotos,Chelsae Krug,8726.92,4
+69,Bassariscus astutus,Bev Jacob,9791.18,2
+70,Choloepus hoffmani,Elayne Basant,635.55,6
+71,Eremophila alpestris,Ester Dunkerly,7173.85,5
+72,Canis aureus,Burnaby Mogra,9494.82,5
+73,Bucephala clangula,Katine Raittie,1185.71,2
+74,Buteo galapagoensis,Beatriz Koppeck,1493.67,5
+75,Felis wiedi or Leopardus weidi,Gunilla Rossiter,4848.91,3
+76,Ardea golieth,Ephrayim Larrington,4743.03,5
+77,Arctogalidia trivirgata,Bennie McLeary,6075.2,2
+78,Bos taurus,Myrwyn Marusic,6685.76,6
+79,Acrantophis madagascariensis,Millisent Surfleet,4053.13,1
+80,Lorythaixoides concolor,Tuckie Lobe,8376.83,6
+81,Crotalus triseriatus,Vick Oller,6417.81,1
+82,Antechinus flavipes,Kris Tanguy,3173.66,2
+83,Spizaetus coronatus,Joaquin Brereton,8674.05,2
+84,unavailable,Shane Jefford,5190.91,2
+85,Trachyphonus vaillantii,Enrico Syvret,5724.19,6
+86,unavailable,Jefferey Evequot,9110.76,2
+87,Vulpes chama,Randolph Naton,5668.18,4
+88,Ephipplorhynchus senegalensis,Nanine Brenton,7900.35,2
+89,Psophia viridis,Edvard Heatherington,2235.71,1
+90,Morelia spilotes variegata,Mariejeanne Burleton,9196.95,3
+91,Laniaurius atrococcineus,Matteo Boswell,2627.9,3
+92,Eumetopias jubatus,Jecho D'orsay,2558.45,5
+93,Alligator mississippiensis,Joleen Goymer,2192.99,5
+94,Pseudocheirus peregrinus,Emmie Threadgall,7689.52,3
+95,Castor canadensis,Adore Eveque,3029.75,2
+96,Panthera leo,Doria Jakeway,4418.89,6
+97,Psittacula krameri,Hilarius Castelli,4920.99,1
+98,Terathopius ecaudatus,Olive Josskovitz,2097.51,2
+99,Felis pardalis,Ferris Claffey,653.17,3
+100,Agelaius phoeniceus,Lothario Condit,3271.52,3

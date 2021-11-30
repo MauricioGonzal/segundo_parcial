@@ -154,8 +154,10 @@ int ll_add(LinkedList* this, void* pElement)
     len= ll_len(this);
     if(this!=NULL)
     {
-    	addNode(this, len, pElement);
-    	 returnAux=0;
+    	if(addNode(this, len, pElement)==0){
+    		returnAux=0;
+    	}
+
     }
 
     return returnAux;
@@ -394,19 +396,13 @@ void* ll_pop(LinkedList* this,int index)
 int ll_contains(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
-    int len;
-    void* pAuxElement;
-    len=ll_len(this);
     if(this!=NULL){
     	returnAux=0;
-    	for(int i=0; i<len; i++){
-    		pAuxElement= ll_get(this, i);
-    		if(pAuxElement== pElement){
+    	if(ll_indexOf(this, pElement)!=-1){
     			returnAux=1;
-    			break;
     		}
     	}
-    }
+
     return returnAux;
 }
 
@@ -429,7 +425,7 @@ int ll_containsAll(LinkedList* this,LinkedList* this2)
     	returnAux=1;
     	for(int i=0; i<len; i++){
     		pElement= ll_get(this2, i);
-    		if(ll_contains(this, pElement)!=1){
+    		if(ll_contains(this, pElement)==0){
     			returnAux=0;
     			break;
     		}
@@ -452,16 +448,17 @@ LinkedList* ll_subList(LinkedList* this,int from,int to)
 {
     LinkedList* cloneArray = NULL;
     int len;
-    Node* pNode;
+    void* pElement;
     len=ll_len(this);
 
     if(this!=NULL && from>-1 && from<len && to>-1 && to<len+1){
     	cloneArray= ll_newLinkedList();
     	if(cloneArray!=NULL){
     	for(int i=from; i<to; i++){
-    		pNode= getNode(this, i);
-    		addNode(cloneArray, i, pNode->pElement);
-
+    		pElement= ll_get(this, i);
+    		if(pElement!=NULL){
+    		ll_add(cloneArray, pElement);
+    		}
     	}
     	}
     }
@@ -522,3 +519,27 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
       }
       return returnAux;
   }
+
+LinkedList* ll_filter(LinkedList* this, int (*fn)(void* element)){
+/*La función “ll_filter” recibirá una lista y una función criterio “fn”. Se deberá iterar todos los elementos
+de la lista y pasarlos a la función “fn”. La función “fn” devolverá 1 si ese ítem se debe agregar a la
+lista resultado o 0 si no debe agregarse. La función “ll_filter” generará la nueva lista resultado,
+agregará a la misma los ítems correspondientes y la devolverá.*/
+	LinkedList* listaFiltrada= ll_newLinkedList();
+
+
+if(fn!=NULL && this!=NULL && listaFiltrada!=NULL){
+	for(int i=0; i<ll_len(this); i++){
+		if(fn(ll_get(this, i))==1){
+			ll_add(listaFiltrada, ll_get(this, i));
+		}
+	}
+
+}
+
+
+	return listaFiltrada;
+}
+
+
+
