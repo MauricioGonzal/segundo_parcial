@@ -95,7 +95,7 @@ int controller_CargarListaFiltradaEnCsv(LinkedList* listaFiltrada, LinkedList* l
 	retorno=-1;
 	if(pFile!=NULL && listaFiltrada!=NULL && listaEditoriales!=NULL){
 		retorno=1;
-		if(cargarListaFiltrada(pFile, listaFiltrada, listaEditoriales)==0){
+		if(parser_ListaFiltradaForText(pFile, listaFiltrada, listaEditoriales)==0){
 			retorno=0;
 		}
 
@@ -125,7 +125,7 @@ int controller_CargarListaMapeadaEnCsv(LinkedList* listaMapeada, LinkedList* lis
 	retorno=-1;
 	if(pFile!=NULL && listaMapeada!=NULL && listaEditoriales!=NULL){
 		retorno=1;
-		if(cargarListaMapeada(pFile, listaMapeada, listaEditoriales)==0){
+		if(parser_ListaMapeadaforText(pFile, listaMapeada, listaEditoriales)==0){
 			retorno=0;
 		}
 

@@ -20,4 +20,8 @@ int parser_LibroFromText(FILE* pFile, LinkedList* listaLibros);
 
 int parser_EditorialFromText(FILE* pFile, LinkedList* listaEditoriales);
 
+int parser_ListaMapeadaforText(FILE* pFile, LinkedList* listaMapeada, LinkedList* listaEditoriales);
+
+int parser_ListaFiltradaForText(FILE* pFile, LinkedList* listaFiltrada, LinkedList* listaEditoriales);
+
 #endif /* PARSER_H_ */
