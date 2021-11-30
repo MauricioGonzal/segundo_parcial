@@ -88,3 +88,20 @@ int cargarArchivoEditorial(char* archivoCreado){
 
 	return retorno;
 }
+
+int imprimirListaEditoriales(LinkedList* editoriales){
+	int retorno;
+	Editorial* pEditorial;
+	retorno=-1;
+	if(editoriales!=NULL){
+		for(int i=0; i<ll_len(editoriales); i++){
+			pEditorial= ll_get(editoriales, i);
+			if(pEditorial!=NULL){
+				retorno=0;
+				printf("%d, %s", pEditorial->id, pEditorial->editorial);
+			}
+		}
+	}
+
+	return retorno;
+}

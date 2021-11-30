@@ -58,7 +58,17 @@ Nota 2: Se deberán utilizar las bibliotecas LinkedList, Libro y Editorial (desar
 necesarias).
 Nota 3: Los datos (editoriales y libros) deberán estar en listas separadas, realizando las relaciones
 correspondientes entre las entidades.
-Nota 4: Utilizar MVC (modelo vista controlador)*/
+Nota 4: Utilizar MVC (modelo vista controlador)
+
+parte 2:
+
+Desarrollar la función ll_map en la biblioteca linkedList, la cual recibirá la lista y una función.
+La función ll_map ejecutará la función recibida como parámetro por cada ítem de la lista, de
+este modo se realizarán descuentos a los precios según se detalla:
+* PLANETA: 20% (si el monto es mayor o igual a $300)
+* SIGLO XXI EDITORES: 10% (si el monto es menor o igual a $200)
+Agregar la siguiente opcion al menú de usuarios:
+6. Generar el archivo de salida “mapeado.csv” luego de aplicar la función map.*/
 
 int main(void) {
 	setbuf(stdout, NULL);
@@ -66,19 +76,22 @@ int main(void) {
 	int opcionSalida;
 	int banderaLibros;
 	int banderaEditoriales;
+	int banderaCargaMap;
 	banderaEditoriales=1;
 	banderaLibros=1;
+	banderaCargaMap=1;
 
 	opcionSalida=0;
 
 	LinkedList* listaLibros= ll_newLinkedList();
 	LinkedList* listaEditoriales= ll_newLinkedList();
 	LinkedList* listaFiltrada;
+	LinkedList* listaMapeada;
 
 	if(listaLibros!=NULL && listaEditoriales!=NULL){
 	do{
 		Menu();
-		if(PedirYValidarNumeroMejorado("\nIngrese una opcion", &opcion, 1, 6, 5)!=0){
+		if(PedirYValidarNumeroMejorado("\nIngrese una opcion", &opcion, 1, 7, 5)!=0){
 			opcionSalida=1;
 		}
 		switch(opcion){
@@ -148,14 +161,29 @@ int main(void) {
 
 			break;
 		case 6:
+			if(banderaCargaMap==1){
+
+			if(controller_Map(listaMapeada, listaLibros)!=NULL){
+				listaMapeada= controller_Map(listaMapeada, listaLibros);
+				if(controller_CargarListaMapeadaEnCsv(listaMapeada, listaEditoriales)==0){;
+				banderaCargaMap=0;
+				printf("\nArchivo mapeado.csv guardado exitosamente\n");
+				}
+			}
+			}
+			else{
+				printf("El archivo mapeado.csv ya se encuentra guardado en el sistema\n");
+			}
+			break;
+		case 7:
 			opcionSalida= SalirDelPrograma();
 			break;
 		}
 
 	}while(opcionSalida!=1);
 
-
 	}
+
 	return EXIT_SUCCESS;
 }
 

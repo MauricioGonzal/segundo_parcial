@@ -62,3 +62,15 @@ int parser_EditorialFromText(FILE* pFile, LinkedList* listaEditoriales){
 
 	return retorno;
 }
+
+/*int parser_ListaMapeadaforText(FILE* pFile, LinkedList* listaMapeada){
+	int retorno;
+	retorno=-1;
+	if(pFile!=NULL && listaMapeada!=NULL){
+		for(int i=0; i<ll_len(listaMapeada); i++){
+			fprintf(pFile, "%d, %s, %s, %f", )
+		}
+	}
+
+	return retorno;
+}*/

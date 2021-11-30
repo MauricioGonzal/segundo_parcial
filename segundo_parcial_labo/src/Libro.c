@@ -189,10 +189,12 @@ int libro_CompareByAutor(void* e1, void* e2){
 int buscarMinotauro(void* element){
 	int retorno;
 	Libro* elLibro;
+	int idEditorial;
 	elLibro= (Libro*) element;
 	retorno=0;
+	Libro_getIdEditorial(elLibro, &idEditorial);
 
-	if(elLibro->idEditorial==4){
+	if(idEditorial==4){
 		retorno=1;
 	}
 
@@ -200,3 +202,27 @@ int buscarMinotauro(void* element){
 }
 
 
+int asignarDescuento(void* element){
+	int retorno;
+
+	Libro* pLibro;
+	pLibro= (Libro*) element;
+	retorno=-1;
+
+	if(pLibro->idEditorial==1 && pLibro->precio>=5000){
+
+		pLibro->precio= (pLibro->precio) - ((20*pLibro->precio)/100);
+		retorno=0;
+
+	}
+	else{
+		if(pLibro->idEditorial==2 && pLibro->precio<=4000){
+			pLibro= (Libro*) element;
+			pLibro->precio= (pLibro->precio) - ((10*pLibro->precio)/100);
+			retorno=0;
+		}
+	}
+
+
+	return retorno;
+}

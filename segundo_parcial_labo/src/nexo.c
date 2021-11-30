@@ -69,7 +69,7 @@ void listOneLibro(Libro* this, LinkedList* editoriales){
 			}
 		}
 		if(pLibro!=NULL){
-		fprintf(pFile, "%d, %s, %s, %f, %s\n", pLibro->id, pLibro->titulo, pLibro->autor, pLibro->precio, pEditorial->editorial);
+		fprintf(pFile, "%d, %s, %s, %.2f, %s\n", pLibro->id, pLibro->titulo, pLibro->autor, pLibro->precio, pEditorial->editorial);
 		retorno=0;
 		}
 	}
@@ -77,3 +77,32 @@ void listOneLibro(Libro* this, LinkedList* editoriales){
 
 	return retorno;
 }
+
+ int cargarListaMapeada(FILE* pFile, LinkedList* listaMapeada, LinkedList* listaEditoriales){
+
+	int retorno;
+	retorno=-1;
+	Libro* pLibro;
+	Editorial* pEditorial;
+
+	fprintf(pFile, "ID, TITULO, AUTOR, PRECIO, EDITORIAL\n");
+
+	for(int i=0; i<ll_len(listaMapeada); i++){
+		pLibro= (Libro*)ll_get(listaMapeada, i);
+		for(int j=0; j<ll_len(listaEditoriales); j++){
+			pEditorial= (Editorial*)ll_get(listaEditoriales, j);
+			if(pEditorial->id== pLibro->idEditorial){
+				break;
+			}
+		}
+		if(pLibro!=NULL){
+		fprintf(pFile, "%d, %s, %s, %.2f, %s\n", pLibro->id, pLibro->titulo, pLibro->autor, pLibro->precio, pEditorial->editorial);
+		retorno=0;
+		}
+	}
+
+
+	return retorno;
+}
+
+

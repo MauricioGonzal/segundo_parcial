@@ -30,4 +30,8 @@ LinkedList* controller_FiltrarLista(LinkedList* listaLibros, LinkedList* listaFi
 
 int controller_CargarListaFiltradaEnCsv(LinkedList* listaFiltrada, LinkedList* listaEditoriales);
 
+LinkedList* controller_Map(LinkedList* listaMapeada, LinkedList* listaLibros);
+
+int controller_CargarListaMapeadaEnCsv(LinkedList* listaMapeada, LinkedList* listaEditoriales);
+
 #endif /* CONTROLLER_H_ */

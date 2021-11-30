@@ -13,6 +13,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "input.h"
+#include "LinkedList.h"
 
 typedef struct{
 	int id;
@@ -32,5 +33,7 @@ int Editorial_getEditorial(Editorial* this, char* editorialNombre);
 int Editorial_setEditorial(Editorial* this, char* editorialNombre);
 
 int cargarArchivoEditorial(char* archivoCreado);
+
+int imprimirListaEditoriales(LinkedList* editoriales);
 
 #endif /* EDITORIAL_H_ */

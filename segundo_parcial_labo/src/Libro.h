@@ -53,4 +53,9 @@ int cargarArchivoLibros(char* archivoCreado);
 int libro_CompareByAutor(void* e1, void* e2);
 
 int buscarMinotauro(void* element);
+
+int altaLibro(LinkedList* listaLibros, int maxId);
+
+
+int asignarDescuento(void* element);
 #endif /* LIBRO_H_ */

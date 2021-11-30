@@ -154,7 +154,7 @@ void VerificarTresRetornos(int retorno, char mensajeCorrecto[], char mensajeNoEx
 
 void Menu(){
 	printf("MENU\n1. Ingrese el archivo de libros que desea cargar\n2. Ingrese el archivo de editoriales que desea cargar\n3.Ordenar la lista generada en el ítem anterior, con la función ll_sort, según el criterio de "
-			"ordenamiento “Autor” de manera ascendente.\n4.Imprimir por pantalla todos los datos de los libros.\n5.Realizar un listado de los libros de la editorial MINOTAURO\n6.SALIR");
+			"ordenamiento “Autor” de manera ascendente.\n4.Imprimir por pantalla todos los datos de los libros.\n5.Realizar un listado de los libros de la editorial MINOTAURO\n6.6. Generar el archivo de salida “mapeado.csv”\n7.SALIR");
 }
 
 int ValidarNumero(char numeros[]){

@@ -107,4 +107,33 @@ int controller_CargarListaFiltradaEnCsv(LinkedList* listaFiltrada, LinkedList* l
 
 }
 
+LinkedList* controller_Map(LinkedList* listaMapeada, LinkedList* listaLibros){
+
+	if(listaMapeada!=NULL && listaLibros!=NULL){
+		listaMapeada= ll_map(listaLibros, asignarDescuento);
+
+	}
+
+	return listaMapeada;
+}
+
+int controller_CargarListaMapeadaEnCsv(LinkedList* listaMapeada, LinkedList* listaEditoriales){
+	int retorno;
+	FILE* pFile;
+	pFile= fopen("mapeado.csv", "w");
+
+	retorno=-1;
+	if(pFile!=NULL && listaMapeada!=NULL && listaEditoriales!=NULL){
+		retorno=1;
+		if(cargarListaMapeada(pFile, listaMapeada, listaEditoriales)==0){
+			retorno=0;
+		}
+
+
+	}
+
+	fclose(pFile);
+	return retorno;
+
+}
 

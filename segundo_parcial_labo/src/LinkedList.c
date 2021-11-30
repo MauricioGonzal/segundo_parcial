@@ -541,5 +541,31 @@ if(fn!=NULL && this!=NULL && listaFiltrada!=NULL){
 	return listaFiltrada;
 }
 
+/*Desarrollar la función ll_map en la biblioteca linkedList, la cual recibirá la lista y una función.
+La función ll_map ejecutará la función recibida como parámetro por cada ítem de la lista, de
+este modo se realizarán descuentos a los precios según se detalla:
+* PLANETA: 20% (si el monto es mayor o igual a $5000)
+* SIGLO XXI EDITORES: 10% (si el monto es menor o igual a $4000)*/
+
+LinkedList* ll_map(LinkedList* this, int (*fn)(void* element)){
+	LinkedList* listaMapeada;
+	void* element;
+	void* auxElement;
+	listaMapeada= ll_newLinkedList();
+	if(this!=NULL && fn!=NULL && listaMapeada!=NULL){
+		for(int i=0; i<ll_len(this); i++){
+			element= ll_get(this, i);
+			fn(element);
+			ll_add(listaMapeada, element);
+
+		}
+	}
+
+	return listaMapeada;
+
+}
+
+
+
 
 
