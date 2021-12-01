@@ -16,7 +16,7 @@
 #include "Libro.h"
 #include "parser.h"
 #include "Editorial.h"
-
+#include "nexo.h"
 
 int controller_LoadLibros(LinkedList* listaLibros, char* path);
 

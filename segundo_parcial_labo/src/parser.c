@@ -72,7 +72,7 @@ int parser_ListaFiltradaForText(FILE* pFile, LinkedList* listaFiltrada, LinkedLi
 	Editorial* pEditorial;
 
 	fprintf(pFile, "ID, TITULO, AUTOR, PRECIO, EDITORIAL\n");
-
+	printf("%d", ll_len(listaFiltrada));
 	for(int i=0; i<ll_len(listaFiltrada); i++){
 		pLibro= (Libro*)ll_get(listaFiltrada, i);
 		for(int j=0; j<ll_len(listaEditoriales); j++){

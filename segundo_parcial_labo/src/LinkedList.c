@@ -550,14 +550,13 @@ este modo se realizarán descuentos a los precios según se detalla:
 LinkedList* ll_map(LinkedList* this, int (*fn)(void* element)){
 	LinkedList* listaMapeada;
 	void* element;
-	void* auxElement;
 	listaMapeada= ll_newLinkedList();
 	if(this!=NULL && fn!=NULL && listaMapeada!=NULL){
 		for(int i=0; i<ll_len(this); i++){
 			element= ll_get(this, i);
-			fn(element);
+			if(fn(element)==0){
 			ll_add(listaMapeada, element);
-
+			}
 		}
 	}
 

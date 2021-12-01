@@ -110,6 +110,7 @@ int controller_CargarListaFiltradaEnCsv(LinkedList* listaFiltrada, LinkedList* l
 LinkedList* controller_Map(LinkedList* listaMapeada, LinkedList* listaLibros){
 
 	if(listaMapeada!=NULL && listaLibros!=NULL){
+
 		listaMapeada= ll_map(listaLibros, asignarDescuento);
 
 	}

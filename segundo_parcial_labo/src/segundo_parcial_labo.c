@@ -86,7 +86,7 @@ int main(void) {
 
 	LinkedList* listaLibros= ll_newLinkedList();
 	LinkedList* listaEditoriales= ll_newLinkedList();
-	LinkedList* listaFiltrada;
+	LinkedList* listaFiltrada= ll_newLinkedList();
 	LinkedList* listaMapeada;
 
 	if(listaLibros!=NULL && listaEditoriales!=NULL){
@@ -100,11 +100,13 @@ int main(void) {
 			if(banderaLibros==1){
 
 			if(controller_LoadLibros(listaLibros, "libros.csv")==0){
-				printf("\nel archivo se ha cargado correctamente\n");
+				printf("\nEl archivo se ha cargado correctamente\n");
 				banderaLibros=0;
 			}
 			else{
+				if(banderaLibros==0){
 				printf("el archivo ya se encuentra cargado\n");
+				}
 			}
 			}
 			break;
@@ -116,7 +118,9 @@ int main(void) {
 			}
 			}
 			else{
+				if(banderaEditoriales==0){
 				printf("el archivo ya se encuentra cargado\n");
+				}
 			}
 			break;
 
@@ -150,7 +154,7 @@ int main(void) {
 				listaFiltrada= controller_FiltrarLista(listaLibros, listaFiltrada);
 				ListLibros(listaFiltrada, listaEditoriales);
 				printf("Guardando lista en archivo...\n");
-				VerificarTresRetornos(controller_CargarListaFiltradaEnCsv(listaFiltrada, listaEditoriales), "GUARDADO", "ERROR LEVE", "ERROR");
+				VerificarTresRetornos(controller_CargarListaFiltradaEnCsv(listaFiltrada, listaEditoriales), "GUARDADO\n", "Error en la carga del archivo", "ERROR");
 
 
 			}
@@ -162,18 +166,17 @@ int main(void) {
 
 			break;
 		case 6:
-			if(banderaCargaMap==1){
-
+			if(banderaEditoriales==0 && banderaLibros==0 && banderaCargaMap==1){
 			if(controller_Map(listaMapeada, listaLibros)!=NULL){
 				listaMapeada= controller_Map(listaMapeada, listaLibros);
-				if(controller_CargarListaMapeadaEnCsv(listaMapeada, listaEditoriales)==0){;
+				if(controller_CargarListaMapeadaEnCsv(listaMapeada, listaEditoriales)==0){
 				banderaCargaMap=0;
 				printf("\nArchivo mapeado.csv guardado exitosamente\n");
 				}
 			}
 			}
 			else{
-				printf("El archivo mapeado.csv ya se encuentra guardado en el sistema\n");
+				printf("ERROR. Verifique los datos ingresados");
 			}
 			break;
 		case 7:
